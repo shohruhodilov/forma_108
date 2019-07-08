@@ -9,9 +9,9 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="">{% csrf_token %}
 
 <div class="container-fluid mt-5">
+    <h3>Logged in as {{ user.username }}</h3>
     <form class="form-horizontal" action="" method="post">{% csrf_token %}
         {{ form.management_form }}
         <div class="table-responsive">
@@ -32,9 +32,8 @@
                 </tr>
                 <tbody>
                 {% for forma in form %}
+                    {{ forma.id }}
                     <tr>
-
-
                         <td>{{ forma.q_type|as_crispy_field }}</td>
                         <td>{{ forma.servise_name|as_crispy_field }}</td>
                         <td>{{ forma.servise_code|as_crispy_field }}</td>
@@ -42,7 +41,6 @@
                         <td>{{ forma.report_month|as_crispy_field }}</td>
                         <td>{{ forma.report_year|as_crispy_field }}</td>
                         <td>{{ forma.last_year|as_crispy_field }}</td>
-
                     </tr>
                     </tbody> {% endfor %}
             </table>
