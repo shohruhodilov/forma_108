@@ -4,6 +4,7 @@ from django.urls import reverse
 
 
 class Qurilish(models.Model):
+    id = models.AutoField(primary_key=True)
     q_type = models.CharField(max_length=100)
     servise_name = models.CharField(max_length=100)
     servise_code = models.CharField(max_length=5)
